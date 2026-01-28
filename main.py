@@ -7,10 +7,10 @@ A project to represent my Chinese Zodiac Animal :)
 
 """
 
-import numpy as np
 import mediapipe as mp
 import cv2
 import os
+import numpy as np 
 from collections import deque
 
 expression_buffer = deque(maxlen=7)
@@ -33,22 +33,22 @@ face_mesh = mp_face_mesh.FaceMesh(
 # Pose Initialization
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.5
+    min_detection_confidence=0.4,
+    min_tracking_confidence=0.4
 )
 
 #Hands Initalization 
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(
-    max_num_hands=1,
-    min_detection_confidence=0.6,
-    min_tracking_confidence=0.6
+    max_num_hands=3,
+    min_detection_confidence=0.4,
+    min_tracking_confidence=0.4
 )
 
 # Open webcam
 cam = cv2.VideoCapture(0)
 if not cam.isOpened():
-    print("Error: could not open webcam")
+    print("Error: webcam not working")
     exit()
 cv2.namedWindow("Webcam", cv2.WINDOW_NORMAL)
 cv2.namedWindow("Monkey Image", cv2.WINDOW_NORMAL)
@@ -161,7 +161,7 @@ def monkey_sincere(face_landmark_points):
         mouth_open < 0.03
     )
 
-#Running Face program
+#Running Face with Hands Logic program
 while True:
     ret, frame = cam.read()
     if not ret:
