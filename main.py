@@ -6,7 +6,6 @@ A open CV progeram detecting popular monkey reaction faces from Tiktok
 A project to represent my Chinese Zodiac Animal :)
 
 """
-
 import mediapipe as mp
 import cv2
 import os
