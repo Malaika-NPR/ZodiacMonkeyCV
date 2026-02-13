@@ -39,8 +39,8 @@ Running the Project
 
 	- Install dependencies:
 
-		--> pip install opencv-python mediapipe numpy
+		-pip install opencv-python mediapipe numpy
 
 	- Run:
 
-		--> python main.py
+		- python main.py
