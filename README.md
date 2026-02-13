@@ -37,10 +37,10 @@ Smooths predictions across frames to reduce flicker
 
 Running the Project
 
-	- Install dependencies:
+ Install dependencies:
 
-		-pip install opencv-python mediapipe numpy
+	pip install opencv-python mediapipe numpy
 
-	- Run:
+  Run:
 
-		- python main.py
+	 python main.py
